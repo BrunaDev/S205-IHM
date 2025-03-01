@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal com margens de 16px */
+.container {
+    width: 414px;
+    height: 896px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    background-color: #9370DB;
+    padding: 16px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.notifications p {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+/* Main (seções internas) */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+
+/* Mensagens */
+.messages {
+    background-color: #B5D8C7;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Aulas */
+.classes {
+    background-color: #F0E5CF;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.class-item {
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.class-item h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.class-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Notícias */
+.news {
+    background-color: #C8B6E2;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.news-card {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.news-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.news-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsividade para tablets (acima de 768px) */
+@media (min-width: 768px) {
+    .container {
+        width: 768px;
+        height: auto;
+    }
+
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .messages, .classes, .news {
+        flex: 1;
+        min-width: 200px;
+    }
+}
