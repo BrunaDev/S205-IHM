@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    background-color: var(--background);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Tema Principal (padrão/claro) */
+:root {
+    --background: #BFCBEB;
+    --header-bg: #1C8BD9;
+    --header-text: #FFFFFF;
+    --messages-bg: #7191EB;
+    --classes-bg: #BFCBEB;
+    --news-bg: #50c9d7ce;
+    --card-bg: #F5F7FA;
+    --text-primary: #292F33;
+    --text-secondary: #384B59;
+    --border: #9F71EB;
+    --frequencia: #126ae2;
+    --nota: #126ae2;
+    --prova: #126ae2;
+}
+
+/* Tema Escuro */
+[data-theme="dark"] {
+    --background: #292F33;
+    --header-bg: #1C8BD9;
+    --header-text: #E8ECEF;
+    --messages-bg: #347BAE;
+    --classes-bg: #3D6684;
+    --news-bg: #50c9d7ce;
+    --card-bg: #384B59;
+    --text-primary: #E8ECEF;
+    --text-secondary: #BFCBEB;
+    --border: #2B3033;
+    --text-card: #292F33;
+    --frequencia: #126ae2;
+    --nota: #126ae2;
+    --prova: #126ae2;
+}
+
+.container {
+    width: 414px;
+    height: 896px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    margin: 1rem;
+    border-radius: 0.5rem;
+    overflow: auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    color: var(--header-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.main h1 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--card-bg);
+}
+
+/* Seções */
+.messages, .classes, .news {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.messages {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}
+
+.classes {
+    background-color: var(--header-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.news {
+    background-color: var(--header-bg);
+}
+
+.class-item, .news-card {
+    background-color: var(--card-bg);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border);
+}
+
+.class-item h2, .news-card h2 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.class-item p, .news-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Menu de temas */
+.theme-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 1.1rem 0.5rem;
+    border-radius: 0.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1000;
+    max-height: 70px;
+    overflow: hidden;
+}
+
+.theme-menu.active {
+    display: flex;
+}
+
+.theme-btn {
+    position: static;
+    width: 100%;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.50rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background-color: #479bd6;
+    height: 2.2rem;
+}
+
+.theme-btn:active {
+    background-color: #00c1d6;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* SVG Inatel */
+.svg_logo_inatel {
+    width: 100px;
+    height: auto;
+    fill: var(--header-text);
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 768px;
+        height: auto;
+    }
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .main h1 {
+        width: 100%;
+        padding: 0;
+        font-size: 1.5rem;
+        order: -1;
+    }
+    .messages, .classes, .news {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+/*-----------------------------------*/
+
+.carousel-container {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 240px;
+    overflow-x: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    min-width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 10px;
+}
+
+.icon {
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+/* Estilização dos textos */
+h3 {
+    font-family: "Arimo", sans-serif;
+    font-size: 14px;
+    color: var(--text-card);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+p {
+    font-family: "Arimo", sans-serif;
+    font-size: 11px;
+    color: var(--text-card);
+    line-height: 1.5;
+    padding-left: 5px;
+    padding-right: 5px;
+}

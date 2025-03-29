@@ -1,0 +1,58 @@
+.comp-aula {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    background-color: var(--card-bg);
+}
+
+.comp-aula[data-has-prova="true"] {
+    border: 2px solid var(--prova);
+}
+
+.titulo_aula {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.lables {
+    display: flex;
+}
+  
+.lable-prova,
+.lable-frequencia,
+.lable-nota {
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    border-radius: 500px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.lable-prova {
+    background-color: var(--prova);
+}
+  
+.lable-frequencia {
+    background-color: var(--frequencia);
+}
+  
+.lable-nota {
+    background-color: var(--nota);
+}
+  
+.p_lable {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
